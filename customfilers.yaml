@@ -25,15 +25,6 @@ detectors:
       - "acces"
       - "account"
       - "act-"
-      - "exclude"
-      - "000000"
-      - "aaaaaa"
-      - "about"
-      - "abstract"
-      - "academy"
-      - "acces"
-      - "account"
-      - "act-"
       - "act."
       - "act_"
       - "action"
@@ -1502,6 +1493,7 @@ detectors:
       - "zsh-"
       - "zsh."
       - "zsh_"
+      
   - name: github-token
     keywords:
       - ghp_
@@ -1559,5 +1551,5 @@ detectors:
       - opsgenieAPIKey
     regex:
       secret: |-
-        (?i)\b(?:loginEmailId|loginPassword|dpdploginEmailId|dpdploginPassword|newPassword|boatPassword|slackBotToken|zendeskPswd|serviceNowPswd|phonepePswd|salesforceUserPassword|opsgenieAPIKey|password)\s*=\s*(['"]?)([^\s'";]+)\1
+        (?i)\b(?:loginEmailId|loginPassword|dpdploginEmailId|dpdploginPassword|newPassword|boatPassword|slackBotToken|zendeskPswd|serviceNowPswd|phonepePswd|salesforceUserPassword|opsgenieAPIKey|password)\s*=\s*(?:["']?)([^\s"';]+)(?:["']?)
     entropy: 2.0
