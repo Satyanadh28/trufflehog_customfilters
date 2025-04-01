@@ -15,6 +15,8 @@ detectors:
     exclude_regexes_match:
       - |-
         (?i)(?:access(?:ibility|or)|access[_.-]?id|random[_.-]?access|api[_.-]?(?:id|name|version)|rapid|capital|[a-z0-9-]*?api[a-z0-9-]*?:jar:|author|X-MS-Exchange-Organization-Auth|Authentication-Results|(?:credentials?[_.-]?id|withCredentials)|(?:bucket|foreign|hot|idx|natural|primary|pub(?:lic)?|schema|sequence)[_.-]?key|key[_.-]?(?:alias|board|code|frame|id|length|mesh|name|pair|ring|selector|signature|size|stone|storetype|word|up|down|left|right)|key[_.-]?vault[_.-]?(?:id|name)|keyVaultToStoreSecrets|key(?:store|tab)[_.-]?(?:file|path)|issuerkeyhash|(?-i:[DdMm]onkey|[DM]ONKEY)|keying|(?:secret)[_.-]?(?:length|name|size)|UserSecretsId|(?:io\.jsonwebtoken[ \t]?:[ \t]?[\w-]+)|(?:api|credentials|token)[_.-]?(?:endpoint|ur[il])|public[_.-]?token|(?:key|token)[_.-]?file|(?-i:(?:[A-Z_]+=\n[A-Z_]+=|[a-z_]+=\n[a-z_]+=)(?:\n|\z))|(?-i:(?:[A-Z.]+=\n[A-Z.]+=|[a-z.]+=\n[a-z.]+=)(?:\n|\z)))
+      - |-
+        (?i)(?:properties_enabled|APICollections|southbound_api|properties_executedOn|properties_failureCount|#NAME\?)
     exclude_words:
       - "exclude"
       - "000000"
@@ -1524,6 +1526,7 @@ detectors:
       secret: |-
         \bhv[sb]\.(?:[A-Za-z0-9]{24}|[A-Za-z0-9_-]{91,})\b
     entropy: 4.0
+    # [&#8203;:contentReference[oaicite:0]{index=0}]
 
   - name: slack-token
     keywords:
@@ -1552,3 +1555,6 @@ detectors:
       secret: |-
         (?i)\b(?:loginEmailId|loginPassword|dpdploginEmailId|dpdploginPassword|newPassword|boatPassword|slackBotToken|zendeskPswd|serviceNowPswd|phonepePswd|salesforceUserPassword|opsgenieAPIKey|password)\s*=\s*(?:["']?)([^\s"';]+)(?:["']?)
     entropy: 2.0
+    exclude_regexes_match:
+      - |-
+        (?i)(?:process\.env\.(?:loginPassword|Password)|page\.locator\(|data-block-(?:id|type))
