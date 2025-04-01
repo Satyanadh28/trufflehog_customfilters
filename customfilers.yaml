@@ -1524,7 +1524,6 @@ detectors:
       secret: |-
         \bhv[sb]\.(?:[A-Za-z0-9]{24}|[A-Za-z0-9_-]{91,})\b
     entropy: 4.0
-    # [&#8203;:contentReference[oaicite:0]{index=0}]
 
   - name: slack-token
     keywords:
